@@ -1,0 +1,5 @@
+Ver el ejercicio en la consola de Visual Studio Code:
+
+1. Acceder a la carpeta clases: cd clases
+2. Ejecutar el comando: tsc -t es5 main.ts
+3. Ejecutar el comando: node main.js

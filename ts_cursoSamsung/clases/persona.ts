@@ -1,6 +1,6 @@
-import { Direccion } from './direccion';
-import { Mail } from './mail';
-import { Telefono } from './telefono';
+import { Direccion } from "./direccion";
+import { Mail } from "./mail";
+import { Telefono } from "./telefono";
 
 export class Persona {
   private _nombre: string;
@@ -15,7 +15,19 @@ export class Persona {
   private _telefonos: Array<Telefono>;
   private _notas: string;
 
-  constructor(nombre: string, apellidos: string, edad: number, dni: string, cumpleanos: Date, colorFavorito: string, sexo: string, direcciones: Array<Direccion>, mails: Array<Mail>, telefonos: Array<Telefono>, notas:string) {
+  constructor(
+    nombre: string,
+    apellidos: string,
+    edad: number,
+    dni: string,
+    cumpleanos: Date,
+    colorFavorito: string,
+    sexo: string,
+    direcciones: Array<Direccion>,
+    mails: Array<Mail>,
+    telefonos: Array<Telefono>,
+    notas: string
+  ) {
     this._nombre = nombre;
     this._apellidos = apellidos;
     this._edad = edad;
@@ -29,82 +41,106 @@ export class Persona {
     this._notas = notas;
   }
 
-  public get nombre() : string {
+  public get nombre(): string {
     return this._nombre;
   }
-  public set nombre(v : string) {
+  public set nombre(v: string) {
     this._nombre = v;
   }
-  
-  public get apellidos() : string {
+
+  public get apellidos(): string {
     return this._apellidos;
   }
-  public set apellidos(v : string) {
+  public set apellidos(v: string) {
     this._apellidos = v;
   }
-  
-  public get edad() : number {
+
+  public get edad(): number {
     return this._edad;
   }
-  public set edad(v : number) {
+  public set edad(v: number) {
     this._edad = v;
   }
-  
-  public get dni() : string {
+
+  public get dni(): string {
     return this._dni;
   }
-  public set dni(v : string) {
+  public set dni(v: string) {
     this._dni = v;
   }
-  
-  public get cumpleanos() : Date {
+
+  public get cumpleanos(): Date {
     return this._cumpleanos;
   }
-  public set cumpleanos(v : Date) {
+  public set cumpleanos(v: Date) {
     this._cumpleanos = v;
   }
-  
-  public get colorFavorito() : string {
+
+  public get colorFavorito(): string {
     return this._colorFavorito;
   }
-  public set colorFavorito(v : string) {
+  public set colorFavorito(v: string) {
     this._colorFavorito = v;
   }
-  
-  public get sexo() : string {
+
+  public get sexo(): string {
     return this._sexo;
   }
-  public set sexo(v : string) {
+  public set sexo(v: string) {
     this._sexo = v;
   }
-  
-  public get direcciones() : Array<Direccion> {
+
+  public get direcciones(): Array<Direccion> {
     return this._direcciones;
   }
-  public set direcciones(v : Array<Direccion>) {
+  public set direcciones(v: Array<Direccion>) {
     this._direcciones = v;
   }
-  
-  public get mails() : Array<Mail> {
+
+  public get mails(): Array<Mail> {
     return this._mails;
   }
-  public set mails(v : Array<Mail>) {
+  public set mails(v: Array<Mail>) {
     this._mails = v;
   }
-  
-  public get telefonos() : Array<Telefono> {
+
+  public get telefonos(): Array<Telefono> {
     return this._telefonos;
   }
-  public set telefonos(v : Array<Telefono>) {
+  public set telefonos(v: Array<Telefono>) {
     this._telefonos = v;
   }
-  
-  public get notas() : string {
+
+  public get notas(): string {
     return this._notas;
   }
-  public set notas(v : string) {
+  public set notas(v: string) {
     this._notas = v;
   }
-  
-  
+
+  //Métodos para eliminar dirección, teléfono e mail
+  eliminarDireccion(direccion: Direccion) {
+    this._direcciones.pop();
+  }
+
+  eliminarMail(mail: Mail) {
+    this._mails.pop();
+  }
+
+  eliminarTelefono(telefono: Telefono) {
+    this._telefonos.pop();
+  }
+
+  //Métodos para agregar dirección, teléfono e mail
+  agregarNuevaDireccion(direccion: Direccion) {
+    this._direcciones.push(direccion);
+  }
+
+  agregarNuevoMail(mail: Mail) {
+    this._mails.push(mail);
+  }
+
+  agregarNuevoTelefono(telefono: Telefono) {
+    this._telefonos.push(telefono);
+  }
 }

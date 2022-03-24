@@ -125,6 +125,26 @@ var Persona = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
+    //Métodos para eliminar dirección, teléfono e mail
+    Persona.prototype.eliminarDireccion = function (direccion) {
+        this._direcciones.pop();
+    };
+    Persona.prototype.eliminarMail = function (mail) {
+        this._mails.pop();
+    };
+    Persona.prototype.eliminarTelefono = function (telefono) {
+        this._telefonos.pop();
+    };
+    //Métodos para agregar dirección, teléfono e mail
+    Persona.prototype.agregarNuevaDireccion = function (direccion) {
+        this._direcciones.push(direccion);
+    };
+    Persona.prototype.agregarNuevoMail = function (mail) {
+        this._mails.push(mail);
+    };
+    Persona.prototype.agregarNuevoTelefono = function (telefono) {
+        this._telefonos.push(telefono);
+    };
     return Persona;
 }());
 exports.Persona = Persona;
